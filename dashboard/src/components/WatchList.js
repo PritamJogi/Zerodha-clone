@@ -4,6 +4,8 @@ import { watchlist } from "../data/data";
 import { Form } from "react-router-dom";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import DownIcon from '@mui/icons-material/KeyboardArrowDown';
+import BarChartoutlined from '@mui/icons-material/BarChartOutlined';
+import MoreHoriz from '@mui/icons-material/MoreHoriz';
 const WatchList = () => {
   return (
     <div className="watchlist-container">
@@ -55,17 +57,28 @@ const WatchListItem=({stock})=>{
         <span className="price">{stock.price}</span>
        </div>
       </div>
-      {showWatchListActions && <watchListActions uid={stock.name}/>}
+      {showWatchListActions && <WatchListActions uid={stock.name}/>}
     </li>
   )
 }
-
-const watchListActions = ({uid})=>{
+const WatchListActions = ({uid})=>{
   return(
     <span className="actions">
       <span>
         <Tooltip title="Buy (B)" placement="top" arrow TransitionComponent={Grow}>
           <button className="buy">Buy</button>
+        </Tooltip>
+
+        <Tooltip title="Sell (S)" placement="top" arrow TransitionComponent={Grow}>
+          <button className="sell">Sell</button>
+        </Tooltip>
+
+        <Tooltip title="Analytics (A)" placement="top" arrow TransitionComponent={Grow}>
+          <button className="action"><BarChartoutlined className="icon" /></button>
+        </Tooltip>
+
+        <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
+          <button className="action"><MoreHoriz className="icon"/></button>
         </Tooltip>
       </span>
     </span>

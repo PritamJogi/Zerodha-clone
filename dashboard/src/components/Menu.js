@@ -13,6 +13,8 @@ const Menu = () => {
   const handleProfileClick=(index)=>{
     setIsProfileDropdown(!setIsProfileDropdown);
   }
+  const menuClass = "menu";
+  const activeMenuClass= "menu selected";
 
 
   return (
@@ -22,32 +24,32 @@ const Menu = () => {
         <ul>
           <li>
             <Link style={{textDecoration:"none"}}to={'/'} onClick={()=>handlemenuclick(0)}>
-            <p>Dashboard</p>
+            <p className= {selectmenu === 0 ? activeMenuClass : menuClass}>Dashboard</p>
             </Link>
           </li>
           <li>
           <Link style={{textDecoration:"none"}}to={'/oders'} onClick={()=>handlemenuclick(1)}>
-            <p >Orders</p>
+            <p className= {selectmenu === 1 ? activeMenuClass : menuClass}>Orders</p>
             </Link>
           </li>
           <li>
           <Link style={{textDecoration:"none"}}to={'/holdings'} onClick={()=>handlemenuclick(2)}>
-            <p>Holdings</p>
+            <p className= {selectmenu === 2 ? activeMenuClass : menuClass}>Holdings</p>
             </Link>
           </li>
           <li>
             <p><Link style={{textDecoration:"none"}}to={'/positions'} onClick={()=>handlemenuclick(3)}>
-            <p>Positions</p>
+            <p className= {selectmenu === 3 ? activeMenuClass : menuClass}>Positions</p>
             </Link></p>
           </li>
           <li>
           <Link style={{textDecoration:"none"}}to={'/funds'} onClick={()=>handlemenuclick(4)}>
-            <p>Funds</p>
+            <p className= {selectmenu === 4 ? activeMenuClass : menuClass}>Funds</p>
             </Link>
           </li>
           <li>
           <Link style={{textDecoration:"none"}}to={'/apps'} onClick={()=>handlemenuclick(5)}>
-            <p>Apps</p>
+            <p className= {selectmenu === 5 ? activeMenuClass : menuClass}>Apps</p>
             </Link>
           </li>
         </ul>
